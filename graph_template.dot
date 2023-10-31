@@ -1,0 +1,17 @@
+digraph graph_name {
+  graph [
+    charset = "UTF-8";
+    rankdir = BT;
+    ranksep = 3.0;
+  ];
+
+  node [
+    height = 0.7;
+  ];
+
+  // node definition
+  %Nodes%
+
+  // edge definition
+  %Edges%
+}

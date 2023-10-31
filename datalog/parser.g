@@ -48,29 +48,10 @@ elem formula: element ((add|sub) element)* -> {$$:foldl};
 elem element: factor ((mul|div) factor)* -> {$$:foldr};
 
 elem factor:
-    '(' val.formula ')' -> {val};  # コメント
+    '(' val.formula ')' -> {val};
     numeric -> <Number>{$1}</Number>;
 
 text numeric:
     [0-9]+  -> {$1};
     "+" numeric  -> {$2};
     "-" numeric  -> {$1}{$2};
-
-
-
-"pattern"
-rule1 rule2
-rule1 | rule2
-rule
-rule?
-rule*
-rule+
-&rule -- 消費させずにマッチ
-!rule -- 消費させずにマッチ
-
-エラー処理のための ...
-
-別言語でparserを仕立て直す時、文法ファイルが独立なら流用できる。
-
-オフサイドルールの処理。
-
